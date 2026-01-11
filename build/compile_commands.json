@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/ericpham/Desktop/musicC++/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++2b -arch arm64 -o CMakeFiles/music_app.dir/src/musicPlayer.cpp.o -c /Users/ericpham/Desktop/musicC++/src/musicPlayer.cpp",
+  "file": "/Users/ericpham/Desktop/musicC++/src/musicPlayer.cpp",
+  "output": "/Users/ericpham/Desktop/musicC++/build/CMakeFiles/music_app.dir/src/musicPlayer.cpp.o"
+}
+]
