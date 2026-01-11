@@ -2,10 +2,10 @@
 
 Purpose: Help AI coding agents be productive quickly in this C++ music-player repository.
 
-- **Big picture**: This is a small C++ project that builds a single executable music app. Key paths:
-  - `CMakeLists.txt` (project root) — primary build configuration and targets (produces `music_app`).
-  - `src/` — source directory; primary entrypoint is `src/musicPlayer.cpp` (contains `main`).
-  - `build/` — CMake build directory (contains `music_app`, `compile_commands.json`, and Ninja/CMake artifacts). Do not edit files here; regenerate via CMake.
+- **Big picture**: This is a small C++ project that builds a single executable music app targeting **macOS/Unix** (uses Clang/LLVM). Key paths:
+  - [CMakeLists.txt](CMakeLists.txt) (project root) — primary build configuration; sets C++23 standard, enables address/undefined-behavior sanitizers.
+  - [src/](src/) — source directory; primary entrypoint is `src/musicPlayer.cpp` (contains `main`, currently prints welcome message).
+  - `build/` — CMake build directory (Ninja-based, contains `music_app` binary and `compile_commands.json`). Do not edit; regenerate via CMake.
 
 - **Build / run / debug (explicit commands)**:
   - Configure + build (preferred):
@@ -20,23 +20,29 @@ Purpose: Help AI coding agents be productive quickly in this C++ music-player re
   - `compile_commands.json` is present in `build/` — language servers and static analyzers should point to it for correct compile flags.
 
 - **Project-specific patterns & conventions**:
-  - Single executable target named `music_app` driven from `src/musicPlayer.cpp` (the `main` function prints a welcome message).
-  - Prefer editing sources in `src/`; do not modify generated files under `build/` — instead re-run CMake.
-  - There are currently no test directories or external dependencies declared. If adding libs, update `CMakeLists.txt` and ensure `find_package()` or `target_link_libraries()` are used.
+  - Single executable target `music_app` driven from `src/musicPlayer.cpp`.
+  - **Compiler flags**: Release builds use `-Wall -Wextra -O2 -g -fsanitize=address -fsanitize=undefined` (aggressive warnings, optimized, debug symbols, memory/UB detection).
+  - Prefer editing sources in `src/`; do not modify generated files under `build/` — re-run CMake to regenerate.
+  - No test directories or external dependencies yet declared. When adding libraries, update [CMakeLists.txt](CMakeLists.txt) with `find_package()` + `target_link_libraries()`.
 
 - **Static analysis / formatting**:
-  - Use `compile_commands.json` from `build/` for clang-tidy/clangd.
-  - No repo-level formatter config discovered; follow existing project style (simple modern C++ with standard library usage).
+  - Use `compile_commands.json` from `build/` for clang-tidy/clangd configuration.
+  - No formatter config (`.clang-format`) found; follow existing style: `using namespace std;`, standard library, minimal includes.
+  - **Platform note**: Code currently targets Unix/macOS (Clang, CMake); remove Windows-specific pragmas (e.g., `#pragma comment(lib, "winmm.lib")`).
 
 - **Where to make changes**:
-  - Add sources under `src/` and update `CMakeLists.txt` at the repo root to add targets or tests.
+  - Add sources under `src/` and update [CMakeLists.txt](CMakeLists.txt) at the repo root to add targets or tests.
 
-- **Common tasks examples**:
-  - Add a new source and compile: add `src/foo.cpp`, update `CMakeLists.txt` with a new source or target, then run the Configure+Build sequence above.
-  - Rapid iterate on `main`: edit `src/musicPlayer.cpp` and use the `C/C++: clang++ build active file` task to quickly compile and test.
+- **Common tasks**:
+  - **Add a new source**: Create `src/module.cpp`, update [CMakeLists.txt](CMakeLists.txt) to add source to `add_executable()` or create new target, then reconfigure + build.
+  - **Rapid iteration on main**: Edit `src/musicPlayer.cpp`, press Cmd+Shift+B to run the `C/C++: clang++ build active file` task, test output in VS Code terminal.
+  - **Debug the app**: Run task `CMake/Launch - music_app` or use `lldb ./build/music_app` to debug with breakpoints.
 
 - **Agent behavior guidance**:
-  - Do not modify files in `build/` — treat them as generated artifacts.
+  - Do not edit `build/` — all generated artifacts. Always regenerate via CMake after structural changes.
+  - Update [CMakeLists.txt](CMakeLists.txt) for any build configuration changes; provide exact `cmake` commands for validation.
+  - Watch for platform-specific code (Windows pragmas, OS-specific APIs) — this project builds on macOS/Unix with Clang.
+  - Sanitizer errors (`-fsanitize=address,undefined`) will appear at runtime; compile with `-O0 -g` if debugging them
   - When proposing changes to build configuration, modify `CMakeLists.txt` and provide the exact `cmake` commands to test locally.
   - If the agent needs external dependencies, propose `find_package()` changes and a brief rationale, plus the commands to reconfigure and build.
 

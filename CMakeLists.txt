@@ -7,5 +7,8 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -Wall -Wextra -O2 -g -fsanitize=
 
 add_executable(music_app src/musicPlayer.cpp)
 
+#// links AVFOUNDATION - a framework for audio and video playback, recording, and processing on macOS
+#// handles audio format decoding, playback control.. etc
+target_link_libraries(music_app PRIVATE "-framework AVFoundation" "-framework Foundation")
 
 

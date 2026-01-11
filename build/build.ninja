@@ -69,6 +69,7 @@ build music_app: CXX_EXECUTABLE_LINKER__music_app_Debug CMakeFiles/music_app.dir
   CONFIG = Debug
   FLAGS = -g -arch arm64
   LINK_FLAGS = -Wl,-search_paths_first -Wl,-headerpad_max_install_names
+  LINK_LIBRARIES = -framework AVFoundation  -framework Foundation
   OBJECT_DIR = CMakeFiles/music_app.dir
   POST_BUILD = :
   PRE_LINK = :
