@@ -1,7 +1,6 @@
 // to indicate that this file will only be implemented once PER compilation
 #pragma once
 #include <string>
-#include <vector>
 using namespace std;
 
 
@@ -20,8 +19,11 @@ public:
     // getters returning state of the user's current session
     double getDuration() const;
     double getCurrentTime() const;
-    double isPlaying() const;
+    bool isPlaying() const;
 
 private:
-    void *audioPlayer;
+// Uses a void* pointer to hide Objective-C implementation details from the user (AudioPlayerImpl)
+// this pointer will be used to store the implementation details of the audio player object without
+// This is a design pattern called "pointer to implementation" (PIMPL)
+    void* audioPlayer;
 };

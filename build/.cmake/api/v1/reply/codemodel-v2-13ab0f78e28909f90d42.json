@@ -10,7 +10,7 @@
 					"jsonFile" : "directory-.-Debug-9ad1a58d4644cf6543fa.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.16"
+						"string" : "3.20"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -28,7 +28,7 @@
 					[
 						0
 					],
-					"name" : "musicCpp",
+					"name" : "MusicPlayer",
 					"targetIndexes" : 
 					[
 						0
@@ -39,9 +39,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "music_app::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-music_app-Debug-580317d3835d1eb27b73.json",
-					"name" : "music_app",
+					"id" : "MusicPlayer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MusicPlayer-Debug-42aa84da3001fc0f4023.json",
+					"name" : "MusicPlayer",
 					"projectIndex" : 0
 				}
 			]

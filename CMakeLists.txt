@@ -1,25 +1,45 @@
-cmake_minimum_required(VERSION 4.00)
-project(musicCpp LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.20)
+project(MusicPlayer LANGUAGES CXX OBJCXX)
 
-set(CMAKE_CXX_STANDARD 20)
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# flags for compiler optimizations and debugging
-# -Wall - Wextra - O2 - g - fsanitize=address - fsanitize=undefined
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -Wall -Wextra -O2 -g -fsanitize=address -fsanitize=undefined")
+# Enable Objective-C++ for .mm files
+set(CMAKE_OBJCXX_STANDARD 17)
 
-# add the executable target for the music player application
-add_executable(music_app src/musicPlayer.cpp src/audioPlayer.mm cocoaUiKit.mm)
+# Source files
+set(SOURCES
+    src/musicPlayer.cpp
+    src/audioPlayer.mm
+    src/playlistManager.cpp
+    src/userInterface.cpp
+    src/userInterface.hpp
+    src/audioPlayer.hpp
+    src/musicPlayer.hpp
+    src/playlistManager.hpp
+)
 
-#// links AVFOUNDATION - a framework for audio and video playback, recording, and processing on macOS
-#// handles audio format decoding, playback control.. etc
-target_link_libraries(music_app PRIVATE "-framework AVFoundation" "-framework Foundation")
+# Create executable
+add_executable(${PROJECT_NAME} ${SOURCES})
 
-# // links Cocoa (UIKit) - a framework for macOS application development
-# // handles UI elements, event handling, and window management
-# // if the platform is macOS, link the Cocoa framework
-if(APPLE) 
-    target_link_libraries(music_app PRIVATE "-framework Cocoa")
-endif()
+# Include directories
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
+# Find and link macOS frameworks
+find_library(AVFOUNDATION_FRAMEWORK AVFoundation REQUIRED)
+find_library(FOUNDATION_FRAMEWORK Foundation REQUIRED)
 
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    ${AVFOUNDATION_FRAMEWORK}
+    ${FOUNDATION_FRAMEWORK}
+)
+
+# Set output directory
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+)
+
+# Add debug symbols for Debug builds
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+set(CMAKE_OBJCXX_FLAGS_DEBUG "${CMAKE_OBJCXX_FLAGS_DEBUG} -g")

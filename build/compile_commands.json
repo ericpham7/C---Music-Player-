@@ -1,8 +1,20 @@
 [
 {
   "directory": "/Users/ericpham/Desktop/musicC++/build",
-  "command": "/usr/bin/clang++ -g -std=gnu++2b -arch arm64 -o CMakeFiles/music_app.dir/src/musicPlayer.cpp.o -c /Users/ericpham/Desktop/musicC++/src/musicPlayer.cpp",
+  "command": "/usr/bin/clang++ -I/Users/ericpham/Desktop/musicC++/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/MusicPlayer.dir/src/musicPlayer.cpp.o -c /Users/ericpham/Desktop/musicC++/src/musicPlayer.cpp",
   "file": "/Users/ericpham/Desktop/musicC++/src/musicPlayer.cpp",
-  "output": "/Users/ericpham/Desktop/musicC++/build/CMakeFiles/music_app.dir/src/musicPlayer.cpp.o"
+  "output": "/Users/ericpham/Desktop/musicC++/build/CMakeFiles/MusicPlayer.dir/src/musicPlayer.cpp.o"
+},
+{
+  "directory": "/Users/ericpham/Desktop/musicC++/build",
+  "command": "/usr/bin/clang++ -I/Users/ericpham/Desktop/musicC++/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -x objective-c++ -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/MusicPlayer.dir/src/audioPlayer.mm.o -c /Users/ericpham/Desktop/musicC++/src/audioPlayer.mm",
+  "file": "/Users/ericpham/Desktop/musicC++/src/audioPlayer.mm",
+  "output": "/Users/ericpham/Desktop/musicC++/build/CMakeFiles/MusicPlayer.dir/src/audioPlayer.mm.o"
+},
+{
+  "directory": "/Users/ericpham/Desktop/musicC++/build",
+  "command": "/usr/bin/clang++ -I/Users/ericpham/Desktop/musicC++/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/MusicPlayer.dir/src/playlistManager.cpp.o -c /Users/ericpham/Desktop/musicC++/src/playlistManager.cpp",
+  "file": "/Users/ericpham/Desktop/musicC++/src/playlistManager.cpp",
+  "output": "/Users/ericpham/Desktop/musicC++/build/CMakeFiles/MusicPlayer.dir/src/playlistManager.cpp.o"
 }
 ]

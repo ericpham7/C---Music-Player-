@@ -1,10 +1,9 @@
-#include <iostream>
 #include "audioPlayer.hpp"
+#include <iostream>
 using namespace std;
 
 int main() {
-
-    cout << "Welcome to the Music Player!" << endl;
-    // Additional music player logic goes here
-    return 0;
+  AudioPlayer player;
+  cout << "Hello, World!" << endl;
+  return 0;
 }

@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: musicCpp
+# Project: MusicPlayer
 # Configurations: Debug
 # =============================================================================
 
@@ -41,41 +41,60 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /Users/ericpham/Desktop/musicC++/build/
 # =============================================================================
-# Object build statements for EXECUTABLE target music_app
+# Object build statements for EXECUTABLE target MusicPlayer
 
 
 #############################################
-# Order-only phony target for music_app
+# Order-only phony target for MusicPlayer
 
-build cmake_object_order_depends_target_music_app: phony || .
+build cmake_object_order_depends_target_MusicPlayer: phony || .
 
-build CMakeFiles/music_app.dir/src/musicPlayer.cpp.o: CXX_COMPILER__music_app_unscanned_Debug /Users/ericpham/Desktop/musicC++/src/musicPlayer.cpp || cmake_object_order_depends_target_music_app
+build CMakeFiles/MusicPlayer.dir/src/musicPlayer.cpp.o: CXX_COMPILER__MusicPlayer_unscanned_Debug /Users/ericpham/Desktop/musicC++/src/musicPlayer.cpp || cmake_object_order_depends_target_MusicPlayer
   CONFIG = Debug
-  DEP_FILE = CMakeFiles/music_app.dir/src/musicPlayer.cpp.o.d
-  FLAGS = -g -std=gnu++2b -arch arm64
-  OBJECT_DIR = CMakeFiles/music_app.dir
-  OBJECT_FILE_DIR = CMakeFiles/music_app.dir/src
-  TARGET_SUPPORT_DIR = CMakeFiles/music_app.dir
+  DEP_FILE = CMakeFiles/MusicPlayer.dir/src/musicPlayer.cpp.o.d
+  FLAGS = -g -g -std=gnu++17 -arch arm64
+  INCLUDES = -I/Users/ericpham/Desktop/musicC++/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
+  OBJECT_DIR = CMakeFiles/MusicPlayer.dir
+  OBJECT_FILE_DIR = CMakeFiles/MusicPlayer.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/MusicPlayer.dir
+
+build CMakeFiles/MusicPlayer.dir/src/audioPlayer.mm.o: OBJCXX_COMPILER__MusicPlayer_unscanned_Debug /Users/ericpham/Desktop/musicC++/src/audioPlayer.mm || cmake_object_order_depends_target_MusicPlayer
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles/MusicPlayer.dir/src/audioPlayer.mm.o.d
+  FLAGS = -g -g -std=gnu++17 -arch arm64
+  INCLUDES = -I/Users/ericpham/Desktop/musicC++/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
+  OBJECT_DIR = CMakeFiles/MusicPlayer.dir
+  OBJECT_FILE_DIR = CMakeFiles/MusicPlayer.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/MusicPlayer.dir
+
+build CMakeFiles/MusicPlayer.dir/src/playlistManager.cpp.o: CXX_COMPILER__MusicPlayer_unscanned_Debug /Users/ericpham/Desktop/musicC++/src/playlistManager.cpp || cmake_object_order_depends_target_MusicPlayer
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles/MusicPlayer.dir/src/playlistManager.cpp.o.d
+  FLAGS = -g -g -std=gnu++17 -arch arm64
+  INCLUDES = -I/Users/ericpham/Desktop/musicC++/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
+  OBJECT_DIR = CMakeFiles/MusicPlayer.dir
+  OBJECT_FILE_DIR = CMakeFiles/MusicPlayer.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/MusicPlayer.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target music_app
+# Link build statements for EXECUTABLE target MusicPlayer
 
 
 #############################################
-# Link the executable music_app
+# Link the executable bin/MusicPlayer
 
-build music_app: CXX_EXECUTABLE_LINKER__music_app_Debug CMakeFiles/music_app.dir/src/musicPlayer.cpp.o
+build bin/MusicPlayer: CXX_EXECUTABLE_LINKER__MusicPlayer_Debug CMakeFiles/MusicPlayer.dir/src/musicPlayer.cpp.o CMakeFiles/MusicPlayer.dir/src/audioPlayer.mm.o CMakeFiles/MusicPlayer.dir/src/playlistManager.cpp.o
   CONFIG = Debug
-  FLAGS = -g -arch arm64
+  FLAGS = -g -g -arch arm64
   LINK_FLAGS = -Wl,-search_paths_first -Wl,-headerpad_max_install_names
   LINK_LIBRARIES = -framework AVFoundation  -framework Foundation
-  OBJECT_DIR = CMakeFiles/music_app.dir
+  OBJECT_DIR = CMakeFiles/MusicPlayer.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = music_app
-  TARGET_PDB = music_app.dbg
-  TARGET_SUPPORT_DIR = CMakeFiles/music_app.dir
+  TARGET_FILE = bin/MusicPlayer
+  TARGET_PDB = MusicPlayer.dbg
+  TARGET_SUPPORT_DIR = CMakeFiles/MusicPlayer.dir
 
 
 #############################################
@@ -104,6 +123,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build MusicPlayer: phony bin/MusicPlayer
+
 # =============================================================================
 # Folder targets.
 
@@ -112,7 +133,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ericpham/Desktop/musicC++/build
 
-build all: phony music_app
+build all: phony bin/MusicPlayer
 
 # =============================================================================
 # Built-in targets
@@ -121,14 +142,14 @@ build all: phony music_app
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja /Users/ericpham/Desktop/musicC++/build/cmake_install.cmake: RERUN_CMAKE | /Users/ericpham/Desktop/musicC++/CMakeLists.txt /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake
+build build.ninja /Users/ericpham/Desktop/musicC++/build/cmake_install.cmake: RERUN_CMAKE | /Users/ericpham/Desktop/musicC++/CMakeLists.txt /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeOBJCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-OBJCXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang-OBJCXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeOBJCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-OBJCXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-OBJCXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeOBJCXXCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Users/ericpham/Desktop/musicC++/CMakeLists.txt /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake: phony
+build /Users/ericpham/Desktop/musicC++/CMakeLists.txt /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeOBJCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-OBJCXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang-OBJCXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeOBJCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-OBJCXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-OBJCXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.2.1/CMakeCXXCompiler.cmake CMakeFiles/4.2.1/CMakeOBJCXXCompiler.cmake CMakeFiles/4.2.1/CMakeSystem.cmake: phony
 
 
 #############################################

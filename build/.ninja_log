@@ -1,3 +1,11 @@
 # ninja log v7
-8	372	1768166758209922359	CMakeFiles/music_app.dir/src/musicPlayer.cpp.o	559fcd8eb022847d
-372	519	1768166758574125572	music_app	2e87fc948b70f507
+53	689	1768872610724682131	CMakeFiles/music_app.dir/src/musicPlayer.cpp.o	c071a92e7ba44de3
+950	1101	1768173486718405878	music_app	3141a6b9066b385d
+10	84	1771296077182780767	build.ninja	9c46b8498ca88623
+10	84	1771296077033796648	/Users/ericpham/Desktop/musicC++/build/cmake_install.cmake	9c46b8498ca88623
+53	1119	1768872610724913757	CMakeFiles/music_app.dir/src/audioPlayer.mm.o	d3c97e415a3c1f2a
+9	60	1768173485777133895	CMakeFiles/music_app.dir/cocoaUiKit.mm.o	54f9e6667a4d86ce
+54	457	1768878147370130715	CMakeFiles/MusicPlayer.dir/src/musicPlayer.cpp.o	ac3f23ad03d242c1
+12	376	1768878054042324312	CMakeFiles/MusicPlayer.dir/src/playlistManager.cpp.o	8429204205062c92
+12	877	1768878054041871769	CMakeFiles/MusicPlayer.dir/src/audioPlayer.mm.o	51cf52d1b09a7927
+461	598	1768878147777407225	bin/MusicPlayer	e4d922440c6b9202

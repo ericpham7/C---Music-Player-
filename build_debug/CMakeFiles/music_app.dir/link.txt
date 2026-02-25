@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -g -fsanitize=address -fsanitize=undefined -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/music_app.dir/src/musicPlayer.cpp.o CMakeFiles/music_app.dir/src/audioPlayer.mm.o CMakeFiles/music_app.dir/cocoaUiKit.mm.o -o music_app  -framework AVFoundation -framework Foundation -framework Cocoa
